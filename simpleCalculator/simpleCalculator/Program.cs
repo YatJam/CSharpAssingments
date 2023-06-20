@@ -12,17 +12,17 @@ string operationInput = Console.ReadLine();
 
 string calculatorOutput(string opertationInput)
 {
-    if (operationInput == "A")
+    if (operationInput == "A" || operationInput == "a")
     {
         int result = firstNumber + secondNumber;
         return (firstNumber + " + " + secondNumber + " = " + result);
     }
-    else if (operationInput == "S")
+    else if (operationInput == "S" || operationInput == "s")
     {
         int result = firstNumber - secondNumber;
         return (firstNumber + " - " + secondNumber + " = " + result);
         }
-    else if (operationInput == "M")
+    else if (operationInput == "M" || operationInput == "m")
     {
         int result = firstNumber * secondNumber;
         return (firstNumber + " * " + secondNumber + " = " + result);
@@ -34,4 +34,4 @@ string calculatorOutput(string opertationInput)
 Console.WriteLine(calculatorOutput(operationInput));
 
 Console.WriteLine("Press any key to end programme");
-Console.ReadLine();
+Console.ReadKey();
