@@ -28,7 +28,7 @@ string operationInput = Console.ReadLine();
         printEquation(firstNumber, secondNumber, result, "*");
         }
     else
-        Console.WriteLine("'" + operationInput + "' is an invalid input");
+        Console.WriteLine($"'{operationInput}' is an invalid input");
 
 
 Console.WriteLine("Press any key to end programme");
