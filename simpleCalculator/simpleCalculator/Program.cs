@@ -37,7 +37,7 @@ Console.ReadKey();
 void printEquation(int number1, int number2, int result, string @operator)
 {
     Console.WriteLine(
-        number1 + " " + @operator + " " + number2 + " = " + result);
+        $"{number1} {@operator} {number2} = {result}");
 }
 
 bool checkCaseSensitive (string inputChar, string compareChar)
