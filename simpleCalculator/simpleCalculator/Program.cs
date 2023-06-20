@@ -10,28 +10,37 @@ Console.WriteLine("[S]ubtract the two numbers against eachother");
 Console.WriteLine("[M]ultiply the two numbers together");
 string operationInput = Console.ReadLine();
 
-string calculatorOutput(string opertationInput)
-{
-    if (operationInput == "A" || operationInput == "a")
+
+
+    if (checkCaseSensitive(operationInput, "A"))
     {
         int result = firstNumber + secondNumber;
-        return (firstNumber + " + " + secondNumber + " = " + result);
+        printEquation(firstNumber, secondNumber, result, "+");
     }
-    else if (operationInput == "S" || operationInput == "s")
+    else if (checkCaseSensitive(operationInput, "S"))
     {
         int result = firstNumber - secondNumber;
-        return (firstNumber + " - " + secondNumber + " = " + result);
-        }
-    else if (operationInput == "M" || operationInput == "m")
+        printEquation(firstNumber, secondNumber, result, "-");
+    }
+    else if (checkCaseSensitive(operationInput, "M"))
     {
         int result = firstNumber * secondNumber;
-        return (firstNumber + " * " + secondNumber + " = " + result);
+        printEquation(firstNumber, secondNumber, result, "*");
         }
     else
-        return ("Invalid option selected");
-}
+        Console.WriteLine("Invalid option selected");
 
-Console.WriteLine(calculatorOutput(operationInput));
 
 Console.WriteLine("Press any key to end programme");
 Console.ReadKey();
+
+void printEquation(int number1, int number2, int result, string @operator)
+{
+    Console.WriteLine(
+        number1 + " " + @operator + " " + number2 + " = " + result);
+}
+
+bool checkCaseSensitive (string inputChar, string compareChar)
+{
+    return inputChar.ToUpper() == compareChar.ToUpper();
+}
